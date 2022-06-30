@@ -25,7 +25,7 @@ public class Postagem {
 	private long id;
 	
 	@NotNull
-	@Size(min = 5, max = 100)
+	@Size(min = 5, max = 100, message= "Escreva um titulo que tenha entre 5 e 50 letras")
 	private String titulo;
 	
 	@NotNull
@@ -33,7 +33,7 @@ public class Postagem {
 	private String texto;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date date = new java.sql.Date(System.currentTimeMillis());
+	private Date date = new java.util.Date(System.currentTimeMillis());
 	
 	public long getId() {
 		return id;
