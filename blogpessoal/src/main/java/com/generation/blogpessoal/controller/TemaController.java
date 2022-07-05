@@ -50,7 +50,7 @@ public class TemaController {
 	
 	@PutMapping
 	public ResponseEntity<Tema> put(@RequestBody Tema tema){
-		return ResponseEntity.ok(repository.save(tema));
+		return ResponseEntity.status(HttpStatus.OK).body(repository.save(tema));
 	}
 	
 	@DeleteMapping("/{id}")
