@@ -20,6 +20,9 @@ public class Usuario {
 	@Size(min = 2, max=100)
 	private String nome;
 	
+	private String foto;
+	
+
 	@NotNull
 	@Size(min = 5, max=100)
 	private String usuario;
@@ -27,7 +30,15 @@ public class Usuario {
 	@NotNull
 	@Size(min = 5, max=15)
 	private String senha;
+	
+	public String getFoto() {
+		return foto;
+	}
 
+	public void setFoto(String foto) {
+		this.foto = foto;
+	}
+	
 	public long getId() {
 		return id;
 	}
