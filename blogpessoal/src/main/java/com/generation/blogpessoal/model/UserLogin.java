@@ -9,7 +9,6 @@ public class UserLogin {
 	
 	private String foto;
 	
-
 	private String usuario;
 	
 	private String senha;

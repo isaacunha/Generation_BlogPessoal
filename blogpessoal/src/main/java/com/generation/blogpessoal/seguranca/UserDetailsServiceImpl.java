@@ -12,20 +12,19 @@ import com.generation.blogpessoal.model.Usuario;
 import com.generation.blogpessoal.repository.UsuarioRepository;
 
 @Service
-
 public class UserDetailsServiceImpl implements UserDetailsService {
-	
+
 	@Autowired
-	private UsuarioRepository userRepository;
+	private UsuarioRepository usuarioRepository;
 	
 	@Override
-	public UserDetails loadUserByUsername(String userName) throws UsernameNotFoundException {
+	public UserDetails loadUserByUsername(String username)throws UsernameNotFoundException {
 		
-		Optional<Usuario> user = userRepository.findByUsuario(userName);
-		user.orElseThrow(()-> new UsernameNotFoundException(userName + "not found."));
+		Optional<Usuario> usuario = usuarioRepository.findByUsuario(username);
 		
-		return user.map(UserDetailsImpl::new).get();
-
+		usuario.orElseThrow (() ->new UsernameNotFoundException(username +" não encontrado.") );
+		
+		return usuario.map(UserDetailsImpl::new).get();
 	}
 
 }
